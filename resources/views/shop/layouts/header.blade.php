@@ -29,28 +29,28 @@
             <div class="col-xl-6 col-lg-7">
                 <nav class="header__menu">
                     <ul>
-                        <li><a href="{{ URL::to('/product/list')}}">Shop</a></li>
-                        <li><a href="#">Category</a>
+                        <li><a href="{{ URL::to('/product/list')}}">فروشگاه</a></li>
+                        <li><a href="#">گروه</a>
                             <ul class="dropdown">
                                 @foreach($categories as $key=>$data)
                                 <li><a href="{{ URL::to('/products-by-category/'.$data->id)}}">{{$data->name}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ URL::to('/author/list')}}">Author</a></li>
-                        <li><a href="#">Publisher</a>
+                        <li><a href="{{ URL::to('/author/list')}}">نویسنده</a></li>
+                        <li><a href="#">انتشارات</a>
                             <ul class="dropdown">
                                 @foreach($main_publishers as $key=>$data)
                                 <li><a href="{{ URL::to('/products-by-publisher/'.$data->id)}}">{{$data->name}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ URL::to('/contact')}}">Contact</a></li>
-                        <li><a href="#">{{ Auth::check() ? 'Hi, '.Auth::user()->name : 'Tài khoản' }}</a>
+                        <li><a href="{{ URL::to('/contact')}}">درباره ما</a></li>
+                        <li><a href="#">{{ Auth::check() ? 'Hi, '.Auth::user()->name : 'حساب' }}</a>
                             <ul class="dropdown">
                                 @guest
-                                <li><a href="{{ URL::to('/login')}}">Login</a></li>
-                                <li><a href="{{ URL::to('/register')}}">Register</a></li>
+                                <li><a href="{{ URL::to('/login')}}">ورود</a></li>
+                                <li><a href="{{ URL::to('/register')}}">ثبت نام</a></li>
                                 @else
                                 @if (Auth::user()->role == 'admin')
                                 <li><a href="{{ URL::to('/admin')}}">Dashboard</a></li>
