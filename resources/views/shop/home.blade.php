@@ -35,7 +35,7 @@
 <!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
-        <div class="row">
+        <div style="display: flex;justify-content: right">
             <div class="col-lg-4 col-md-4">
                 <div class="section-title">
                     <h4>محصولات جدید</h4>
