@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="section-title">
-                    <h4>New product</h4>
+                    <h4>محصولات جدید</h4>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 </div>
             @endforeach
             <div class="col-lg-12 text-center">
-                <a href="{{URL::to('/product/list')}}" class="site-btn">More</a>
+                <a href="{{URL::to('/product/list')}}" class="site-btn">بیشتر</a>
             </div>
         </div>
     </div>
@@ -63,29 +63,29 @@
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-car"></i>
-                    <h6>Free Shipping</h6>
-                    <p>For all oder</p>
+                    <h6>ارسال رایگان</h6>
+                    <p>برای تمام سفارش ها</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-money"></i>
-                    <h6>Money Back Guarantee</h6>
-                    <p>If good have Problems</p>
+                    <h6>برگشت پول</h6>
+                    <p>اگر مشکل دارید</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-support"></i>
-                    <h6>Online Support 24/7</h6>
-                    <p>Dedicated support</p>
+                    <h6>پشتیبانی 24 ساعت</h6>
+                    <p>پشتیبانی اختصاصی</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-headphones"></i>
-                    <h6>Payment Secure</h6>
-                    <p>100% secure payment</p>
+                    <h6>پرداخت امن</h6>
+                    <p>100% پرداخت امن</p>
                 </div>
             </div>
         </div>
