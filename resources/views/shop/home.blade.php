@@ -9,20 +9,20 @@
                 <div class="banner__slider owl-carousel">
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>جورج اورول</span>
+                            <h1>قلعه حیوانات</h1>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>هانریش بل</span>
+                            <h1>عقاید یک دلقک</h1>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>آلبرکامو</span>
+                            <h1>طاعون</h1>
                         </div>
                     </div>
                 </div>
