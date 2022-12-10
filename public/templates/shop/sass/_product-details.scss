@@ -83,6 +83,7 @@
 
     h3 {
         color: $heading-color;
+        direction: rtl;
         font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 12px;
@@ -217,7 +218,7 @@
                 border-radius: 50%;
                 line-height: 50px;
                 text-align: center;
-                padding-top: 1px;                
+                padding-top: 1px;
 
                 span {
                     font-size: 18px;
