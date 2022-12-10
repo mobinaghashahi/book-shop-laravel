@@ -7,8 +7,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
-                    <a href="{{URL::TO('/home')}}"><i class="fa fa-home"></i> خانه</a>
                     <span>علاقمندی ها</span>
+                    <a href="{{URL::TO('/home')}}">خانه<i class="fa fa-home"></i></a>
+
                 </div>
             </div>
         </div>
