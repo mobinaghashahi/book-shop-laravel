@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
-                    <a href="{{URL::to('/home')}}"><i class="fa fa-home"></i> Home</a>
-                    <a href="{{URL::to('/product/list')}}">Book</a>
                     <span>{{ $book->name }}</span>
+                    <a href="{{URL::to('/product/list')}}">کتاب</a>
+                    <a href="{{URL::to('/home')}}"> خانه<i class="fa fa-home"></i></a>
                 </div>
             </div>
         </div>
@@ -28,19 +28,19 @@
             </div>
             <div class="col-lg-6">
                 <div class="product__details__text">
-                    <h3>{{ $book->name }} 
-                        <span>Category: <a href="{{URL::to('/products-by-category/'.$book->category->id)}}">{{ $book->category->name }}</a></span>
-                        <span>Publisher: <a href="{{URL::to('/products-by-publisher/'.$book->publisher->id)}}">{{ $book->publisher->name }}</a></span>
-                        <span>Author: <a href="{{URL::to('/author/detail/'.$book->author->id)}}">{{ $book->author->name }}</a></span>
+                    <h3>{{ $book->name }}
+                        <span>گروه: <a href="{{URL::to('/products-by-category/'.$book->category->id)}}">{{ $book->category->name }}</a></span>
+                        <span>انتشارات: <a href="{{URL::to('/products-by-publisher/'.$book->publisher->id)}}">{{ $book->publisher->name }}</a></span>
+                        <span>نویسنده: <a href="{{URL::to('/author/detail/'.$book->author->id)}}">{{ $book->author->name }}</a></span>
                     </h3>
-                    <div class="product__details__price">$ {{ $book->price }}</div>
+                    <div class="product__details__price">تومان {{ $book->price }}</div>
                     <p>{{ $book->information }}</p>
                     <div class="product__details__button">
-                        
-                        <a href="#" class="cart-btn" 
+
+                        <a href="#" class="cart-btn"
                             onclick="event.preventDefault();
                                 document.getElementById('add_to_card_{{$book->id}}').submit();">
-                            <span class="icon_cart_alt"></span> Add to cart
+                            <span class="icon_cart_alt"></span> اضاف کردن به سبد خرید
                         </a>
                         <form id="add_to_card_{{$book->id}}" action="{{URL::to('/add-to-carts')}}" method="POST" style="display: none;">
                             {{ csrf_field() }}
@@ -49,26 +49,26 @@
 
                         @if(!Auth::check())
                             <a href="{{URL::to('login')}}" class="cart-btn" >
-                                <span class="icon_heart_alt"></span> Add to Wishlist
+                                <span class="icon_heart_alt"></span>  اضاف کردن به علاقمندی ها
                             </a>
                         @elseif(Auth::check() && App\Models\Wishlist::where('id_book',$book->id)->where('id_user',Auth::user()->id)->get()->count()>0)
-                        
+
                             @php
                                 $wishlist = App\Models\Wishlist::where('id_book',$book->id)->where('id_user',Auth::user()->id)->get()
                             @endphp
-                            <a href="#" class="cart-btn" onclick="event.preventDefault(); 
+                            <a href="#" class="cart-btn" onclick="event.preventDefault();
                                 document.getElementById('remove_from_wishlist_{{$book->id}}').submit();">
-                                <span class="icon_heart"></span> Remove from Wishlist
+                                <span class="icon_heart"></span> حذف کردن از لیست علاقمندی ها
                             </a>
                             <form id="remove_from_wishlist_{{$book->id}}" action="{{URL::to('/remove-from-wishlist/'.$wishlist[0]->id)}}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                                 {{ method_field('delete') }}
                             </form>
-                        
+
                         @else
-                            <a href="#" class="cart-btn" onclick="event.preventDefault(); 
+                            <a href="#" class="cart-btn" onclick="event.preventDefault();
                                 document.getElementById('add_to_wishlist_{{$book->id}}').submit();">
-                                <span class="icon_heart_alt"></span> Add to Wishlist
+                                <span class="icon_heart_alt"></span>  اضاف کردن به علاقمندی ها
                             </a>
                             <form id="add_to_wishlist_{{$book->id}}" action="{{URL::to('/add-to-wishlist')}}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="related__title">
-                        <h5>Books of the same category</h5>
+                        <h5>کتاب های دسته ی مشابه</h5>
                     </div>
                 </div>
                 @foreach($books_category as $key=>$book)
@@ -97,13 +97,13 @@
             </div>
 
         @endif
-        
+
         @if($books_publisher->count()>0)
             <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="related__title">
-                        <h5>Books of the same publisher</h5>
+                        <h5>کتاب های انتشارات مشابه</h5>
                     </div>
                 </div>
                 @foreach($books_publisher as $key=>$book)
@@ -113,13 +113,13 @@
                 @endforeach
             </div>
         @endif
-        
+
         @if($books_author->count()>0)
             <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="related__title">
-                        <h5>Books of the same author</h5>
+                        <h5>کتاب های نویسنده مشابه</h5>
                     </div>
                 </div>
                 @foreach($books_author as $key=>$book)
