@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 02:17 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Dec 10, 2022 at 10:46 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_book`
+-- Database: `laravel`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ INSERT INTO `authors` (`id`, `name`, `avatar`, `information`, `updated_at`, `cre
 (9, 'Lê Đỗ Quỳnh Hương', 'uploads/images/authors/2022/11/26/16/52/02/16_52_02ba0h.jpg', '“MC Quỳnh Hương từng là host của ‘Thay Lời Muốn Nói’- một trong những chương trình âm nhạc định kỳ trên truyền hình lâu đời nhất tại Việt Nam trong 19 năm trở lại đây. Thạc sĩ âm nhạc học, tác giả, và cũng là một diễn giả truyền cảm hứng với mong muốn mang đến năng lượng tích cực và lan tỏa yêu thương đến cho cộng đồng.”', '2022-11-26 09:52:04', '2022-11-26 09:52:04'),
 (10, 'Jo Hemmings', 'uploads/images/authors/2022/11/26/16/57/57/16_57_57home-page.png', 'Jo Hemmings là Nhà Tâm lý học Hành vi và là thành viên đã đăng ký của Hiệp hội Tâm lý Anh (BPS) cũng như một số tổ chức tâm lý học chuyên nghiệp được công nhận khác. Cô cũng là Huấn luyện viên được Hiệp hội Huấn luyện (AOC) công nhận . Cô ấy chuyên về phân tích tin tức và truyền thông trong lĩnh vực phát sóng cũng như là một huấn luyện viên về mối quan hệ và hẹn hò, đồng thời là một nhân vật truyền hình và đài phát thanh.', '2022-11-26 09:57:58', '2022-11-26 09:57:58'),
 (11, 'Clyde Prestowitz', 'uploads/images/authors/2022/11/26/17/03/39/17_03_39images.jfif', 'Clyde Prestowitz là người sáng lập và là Chủ tịch của Viện Chiến lược Kinh tế. Trước đây, ông từng là cố vấn cho Bộ trưởng Thương mại trong Chính quyền Reagan. Ông là một nhà kinh tế lao động. Prestowitz đã viết cho Foreign Affairs.', '2022-11-26 10:03:41', '2022-11-26 10:03:41'),
-(12, 'Michael D\'Antonio', 'uploads/images/authors/2022/11/26/17/06/19/17_06_19238275.jpg', 'Michael D\'Antonio là một tác giả, nhà báo và nhà bình luận người Mỹ trên CNN. Ông đã chia sẻ Giải thưởng Pulitzer năm 1984 cho Báo cáo Địa phương với một nhóm phóng viên Newsday vì đã đưa tin về Vụ án Baby Jane Doe.', '2022-11-26 10:06:19', '2022-11-26 10:06:19');
+(12, 'Michael D\'Antonio', 'uploads/images/authors/2022/12/08/20/57/33/20_57_33Screenshot (2).png', 'Michael D\'Antonio là một tác giả, nhà báo và nhà bình luận người Mỹ trên CNN. Ông đã chia sẻ Giải thưởng Pulitzer năm 1984 cho Báo cáo Địa phương với một nhóm phóng viên Newsday vì đã đưa tin về Vụ án Baby Jane Doe.', '2022-12-08 17:27:33', '2022-11-26 10:06:19');
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ CREATE TABLE `orders` (
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `total` int(11) NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_user` bigint(20) NOT NULL,
+  `id_user` bigint(20) UNSIGNED NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -284,7 +284,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Nguyễn Nhị Long', 'nhilong0711@gmail.com', NULL, '$2y$10$RKUcZ73e6WsQeLsQzJ.S0eLLfemU3J//qzTS/Gdj4zlbN3HxB068S', 'customer', NULL, '2022-11-22 06:58:56', '2022-11-22 06:58:56'),
 (2, 'Nguyễn Long', 'longnguyen.071100@gmail.com', NULL, '$2y$10$wJRRBQuEgiUUM77tbbOnRe4p3acFpedRXrr0GgKh8isiK5rAo.USS', 'admin', NULL, '2022-11-24 05:26:55', '2022-11-24 05:26:55'),
-(3, 'Hằng Đàm', 'hangdam@gmail.com', NULL, '$2y$10$LS4HbSg7T1TRp9ATkXj/3.em6m.vy5ihNmI/cvZOqPXxXw3.cEOsi', 'customer', NULL, '2022-12-04 06:12:23', '2022-12-04 06:12:23');
+(3, 'Hằng Đàm', 'hangdam@gmail.com', NULL, '$2y$10$LS4HbSg7T1TRp9ATkXj/3.em6m.vy5ihNmI/cvZOqPXxXw3.cEOsi', 'customer', NULL, '2022-12-04 06:12:23', '2022-12-04 06:12:23'),
+(4, 'Mohammad Mobin Aghashahi', 'mobinaghashahi13@gmail.com', NULL, '$2y$10$bcpl25CTy2b8X/81cBMm9OdWMmwMAjCd51Dqn7bE6nOc1/c21IV3i', 'admin', NULL, '2022-12-08 17:25:18', '2022-12-08 17:25:18');
 
 -- --------------------------------------------------------
 
@@ -295,7 +296,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 CREATE TABLE `wishlists` (
   `id` int(11) NOT NULL,
   `id_book` int(11) NOT NULL,
-  `id_user` bigint(11) NOT NULL,
+  `id_user` bigint(11) UNSIGNED NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -324,7 +325,10 @@ ALTER TABLE `authors`
 -- Indexes for table `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_category` (`id_category`),
+  ADD KEY `id_publisher` (`id_publisher`),
+  ADD KEY `id_author` (`id_author`);
 
 --
 -- Indexes for table `categorys`
@@ -349,13 +353,16 @@ ALTER TABLE `migrations`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_book` (`id_book`),
+  ADD KEY `id_order` (`id_order`);
 
 --
 -- Indexes for table `password_resets`
@@ -388,7 +395,9 @@ ALTER TABLE `users`
 -- Indexes for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_book` (`id_book`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -452,13 +461,45 @@ ALTER TABLE `publishers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `books`
+--
+ALTER TABLE `books`
+  ADD CONSTRAINT `books_ibfk_1` FOREIGN KEY (`id_author`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `books_ibfk_2` FOREIGN KEY (`id_category`) REFERENCES `categorys` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `books_ibfk_3` FOREIGN KEY (`id_publisher`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`id_book`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD CONSTRAINT `wishlists_ibfk_1` FOREIGN KEY (`id_book`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `wishlists_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
