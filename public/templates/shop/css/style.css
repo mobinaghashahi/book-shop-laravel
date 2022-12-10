@@ -36,7 +36,7 @@ body {
 	height: 100%;
     font-size: 20px;
     text-align: right;
-	font-family: "B Koodak";
+	font-family: "B Titr";
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -3619,6 +3619,9 @@ ol {
 	.contact__content {
 		margin-bottom: 40px;
 	}
+    body{
+        text-align: left;
+    }
 }
 
 /* Small Device = 320px */
@@ -3681,4 +3684,7 @@ ol {
 		width: 100%;
 		font-size: 24px;
 	}
+    body{
+        text-align: left;
+    }
 }
