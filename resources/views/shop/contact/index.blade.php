@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
-                    <a href="/home"><i class="fa fa-home"></i> Home</a>
-                    <span>Contact</span>
+                    <a href="/home"><i class="fa fa-home"></i> خانه</a>
+                    <span>تماس با ما</span>
                 </div>
             </div>
         </div>
@@ -23,30 +23,30 @@
             <div class="col-lg-6 col-md-6">
                 <div class="contact__content">
                     <div class="contact__address">
-                        <h5>Contact info</h5>
+                        <h5>اطلاعات تماس</h5>
                         <ul>
                             <li>
-                                <h6><i class="fa fa-map-marker"></i> Address</h6>
+                                <h6><i class="fa fa-map-marker"></i> آدرس</h6>
                                 <p>160 Pennsylvania Ave NW, Washington, Castle, PA 16101-5161</p>
                             </li>
                             <li>
-                                <h6><i class="fa fa-phone"></i> Phone</h6>
+                                <h6><i class="fa fa-phone"></i> شماره تلفن</h6>
                                 <p><span>125-711-811</span><span>125-668-886</span></p>
                             </li>
                             <li>
-                                <h6><i class="fa fa-headphones"></i> Support</h6>
+                                <h6><i class="fa fa-headphones"></i> پشتیبانی</h6>
                                 <p>Support.photography@gmail.com</p>
                             </li>
                         </ul>
                     </div>
                     <div class="contact__form">
-                        <h5>SEND MESSAGE</h5>
+                        <h5>ارسال پیام</h5>
                         <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="Website">
-                            <textarea placeholder="Message"></textarea>
-                            <button type="submit" class="site-btn">Send Message</button>
+                            <input type="text" placeholder="نام">
+                            <input type="text" placeholder="ایمیل">
+                            <input type="text" placeholder="وبسات">
+                            <textarea placeholder="متن پیام"></textarea>
+                            <button type="submit" class="site-btn">ارسال</button>
                         </form>
                     </div>
                 </div>
