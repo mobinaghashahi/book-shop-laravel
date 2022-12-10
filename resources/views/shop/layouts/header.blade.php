@@ -29,6 +29,27 @@
             <div class="col-xl-6 col-lg-7">
                 <nav class="header__menu">
                     <ul>
+                        <li><a href="#">{{ Auth::check() ? 'Hi, '.Auth::user()->name : 'حساب' }}</a>
+                            <ul class="dropdown">
+                                @guest
+                                    <li><a href="{{ URL::to('/login')}}">ورود</a></li>
+                                    <li><a href="{{ URL::to('/register')}}">ثبت نام</a></li>
+                                @else
+                                    @if (Auth::user()->role == 'admin')
+                                        <li><a href="{{ URL::to('/admin')}}">پنل کاربری</a></li>
+                                    @endif
+                                    <li><a href="{{ URL::to('/wishlist')}}">علاقمندی ها</a></li>
+                                    <li><a href="{{ URL::to('/my-orders')}}">سفارشات</a></li>
+                                    <li><a href="#" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">خروج
+                                        </a>
+                                        <form id="logout-form" action="{{ URL::to('/user/logout')}}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                @endguest
+                            </ul>
+                        </li>
                         <li><a href="{{ URL::to('/product/list')}}">فروشگاه</a></li>
                         <li><a href="#">گروه</a>
                             <ul class="dropdown">
@@ -45,28 +66,8 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ URL::to('/contact')}}">درباره ما</a></li>
-                        <li><a href="#">{{ Auth::check() ? 'Hi, '.Auth::user()->name : 'حساب' }}</a>
-                            <ul class="dropdown">
-                                @guest
-                                <li><a href="{{ URL::to('/login')}}">ورود</a></li>
-                                <li><a href="{{ URL::to('/register')}}">ثبت نام</a></li>
-                                @else
-                                @if (Auth::user()->role == 'admin')
-                                <li><a href="{{ URL::to('/admin')}}">Dashboard</a></li>
-                                @endif
-                                <li><a href="{{ URL::to('/wishlist')}}">Wishlist</a></li>
-                                <li><a href="{{ URL::to('/my-orders')}}">Order</a></li>
-                                <li><a href="#" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">Logout
-                                    </a>
-                                    <form id="logout-form" action="{{ URL::to('/user/logout')}}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                                @endguest
-                            </ul>
-                        </li>
+                        <li style="padding: 0px 20px 0px 0px"><a href="{{ URL::to('/contact')}}">درباره ما</a></li>
+
                     </ul>
                 </nav>
             </div>
