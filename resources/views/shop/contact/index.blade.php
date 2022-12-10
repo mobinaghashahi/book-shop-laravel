@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="/home"><i class="fa fa-home"></i> خانه</a>
                         <span>تماس با ما</span>
+                        <a href="/home"><i class="fa fa-home"></i> خانه</a>
                     </div>
                 </div>
             </div>
